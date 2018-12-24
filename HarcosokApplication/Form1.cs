@@ -38,7 +38,6 @@ namespace HarcosokApplication
             {
                 MessageBox.Show("Nincs megfelelő adatbázis! A program leáll!");
                 throw;
-                conn.Close();
             }
             
         }
