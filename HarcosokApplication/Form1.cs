@@ -14,13 +14,15 @@ namespace HarcosokApplication
     public partial class Form1 : Form
     {
         MySqlConnection conn;
+        List<string> harcosnevek = new List<string>();
 
         public Form1()
         {
             InitializeComponent();
+
             Databaseconn();
             Tablecreate();
-
+            neveklekeres();
 
 
 
@@ -71,6 +73,60 @@ namespace HarcosokApplication
             ADD FOREIGN KEY (harcos_id) REFERENCES harcosok(id);
             ";
             command3.ExecuteNonQuery();
+        }
+
+        private void letrehozas_Button_Click(object sender, EventArgs e)
+        {
+            string harcosnev = harcosNeveTextBox.Text;
+            bool bennevan = true;
+            foreach(string t in harcosnevek)
+            { 
+                if (harcosnev != t)
+                {
+                    bennevan = false;
+                }
+
+            }
+            if (bennevan == true)
+            {
+                MessageBox.Show("Ez a név már foglalt! Kérlek válassz újat!");
+            }
+            else
+            {
+                
+            }
+            
+
+        }
+
+        public void neveklekeres()
+        {
+            var command1 = conn.CreateCommand();
+            command1.CommandText = "SELECT nev FROM harcosok";
+            MySqlDataReader nevolvasas = command1.ExecuteReader();
+            try
+            {
+                if (nevolvasas.HasRows){
+                    while (nevolvasas.Read())
+                    {
+                        string s = nevolvasas.GetString(0);
+                        harcosnevek.Add(s);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Nincsenek sorok a táblában!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Hiba van a kiolvasásban!");
+            }
+            nevolvasas.Close();
+            foreach (string t in harcosnevek)
+            {
+                harcosokListBox.Items.Add(t);
+            }
         }
 
 

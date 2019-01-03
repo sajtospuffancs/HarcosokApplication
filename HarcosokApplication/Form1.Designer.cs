@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.harcos_GroupBox = new System.Windows.Forms.GroupBox();
-            this.nev_Label = new System.Windows.Forms.Label();
-            this.harcosNexeTextBox = new System.Windows.Forms.TextBox();
             this.letrehozas_Button = new System.Windows.Forms.Button();
+            this.harcosNeveTextBox = new System.Windows.Forms.TextBox();
+            this.nev_Label = new System.Windows.Forms.Label();
             this.kepesseg_GroupBox = new System.Windows.Forms.GroupBox();
-            this.hasznalo_Label = new System.Windows.Forms.Label();
-            this.hasznaloComboBox = new System.Windows.Forms.ComboBox();
-            this.kepessegnev_Label = new System.Windows.Forms.Label();
-            this.kepessegNeveListBox = new System.Windows.Forms.ListBox();
-            this.hozzaad_Button = new System.Windows.Forms.Button();
-            this.leirasTextBox = new System.Windows.Forms.TextBox();
             this.leiras_Label = new System.Windows.Forms.Label();
+            this.leirasTextBox = new System.Windows.Forms.TextBox();
+            this.hozzaad_Button = new System.Windows.Forms.Button();
+            this.kepessegNeveListBox = new System.Windows.Forms.ListBox();
+            this.kepessegnev_Label = new System.Windows.Forms.Label();
+            this.hasznaloComboBox = new System.Windows.Forms.ComboBox();
+            this.hasznalo_Label = new System.Windows.Forms.Label();
             this.listazas_GroupBox = new System.Windows.Forms.GroupBox();
-            this.harcosokListBox = new System.Windows.Forms.ListBox();
-            this.harcosok_Label = new System.Windows.Forms.Label();
-            this.kepessegekListBox = new System.Windows.Forms.ListBox();
-            this.kepessegei_Label = new System.Windows.Forms.Label();
-            this.kepessegleiras_Label = new System.Windows.Forms.Label();
-            this.kepessegLeirasaTextBox = new System.Windows.Forms.TextBox();
-            this.torles_Button = new System.Windows.Forms.Button();
             this.modosit_Button = new System.Windows.Forms.Button();
+            this.torles_Button = new System.Windows.Forms.Button();
+            this.kepessegLeirasaTextBox = new System.Windows.Forms.TextBox();
+            this.kepessegleiras_Label = new System.Windows.Forms.Label();
+            this.kepessegei_Label = new System.Windows.Forms.Label();
+            this.kepessegekListBox = new System.Windows.Forms.ListBox();
+            this.harcosok_Label = new System.Windows.Forms.Label();
+            this.harcosokListBox = new System.Windows.Forms.ListBox();
             this.harcos_GroupBox.SuspendLayout();
             this.kepesseg_GroupBox.SuspendLayout();
             this.listazas_GroupBox.SuspendLayout();
@@ -57,7 +57,7 @@
             // harcos_GroupBox
             // 
             this.harcos_GroupBox.Controls.Add(this.letrehozas_Button);
-            this.harcos_GroupBox.Controls.Add(this.harcosNexeTextBox);
+            this.harcos_GroupBox.Controls.Add(this.harcosNeveTextBox);
             this.harcos_GroupBox.Controls.Add(this.nev_Label);
             this.harcos_GroupBox.Location = new System.Drawing.Point(12, 12);
             this.harcos_GroupBox.Name = "harcos_GroupBox";
@@ -65,22 +65,6 @@
             this.harcos_GroupBox.TabIndex = 0;
             this.harcos_GroupBox.TabStop = false;
             this.harcos_GroupBox.Text = "Harcos létrehozása";
-            // 
-            // nev_Label
-            // 
-            this.nev_Label.AutoSize = true;
-            this.nev_Label.Location = new System.Drawing.Point(6, 33);
-            this.nev_Label.Name = "nev_Label";
-            this.nev_Label.Size = new System.Drawing.Size(30, 13);
-            this.nev_Label.TabIndex = 0;
-            this.nev_Label.Text = "Név:";
-            // 
-            // harcosNexeTextBox
-            // 
-            this.harcosNexeTextBox.Location = new System.Drawing.Point(42, 30);
-            this.harcosNexeTextBox.Name = "harcosNexeTextBox";
-            this.harcosNexeTextBox.Size = new System.Drawing.Size(234, 20);
-            this.harcosNexeTextBox.TabIndex = 1;
             // 
             // letrehozas_Button
             // 
@@ -90,6 +74,23 @@
             this.letrehozas_Button.TabIndex = 2;
             this.letrehozas_Button.Text = "Létrehozás";
             this.letrehozas_Button.UseVisualStyleBackColor = true;
+            this.letrehozas_Button.Click += new System.EventHandler(this.letrehozas_Button_Click);
+            // 
+            // harcosNeveTextBox
+            // 
+            this.harcosNeveTextBox.Location = new System.Drawing.Point(42, 30);
+            this.harcosNeveTextBox.Name = "harcosNeveTextBox";
+            this.harcosNeveTextBox.Size = new System.Drawing.Size(234, 20);
+            this.harcosNeveTextBox.TabIndex = 1;
+            // 
+            // nev_Label
+            // 
+            this.nev_Label.AutoSize = true;
+            this.nev_Label.Location = new System.Drawing.Point(6, 33);
+            this.nev_Label.Name = "nev_Label";
+            this.nev_Label.Size = new System.Drawing.Size(30, 13);
+            this.nev_Label.TabIndex = 0;
+            this.nev_Label.Text = "Név:";
             // 
             // kepesseg_GroupBox
             // 
@@ -107,39 +108,22 @@
             this.kepesseg_GroupBox.TabStop = false;
             this.kepesseg_GroupBox.Text = "Képesség hozzáadása";
             // 
-            // hasznalo_Label
+            // leiras_Label
             // 
-            this.hasznalo_Label.AutoSize = true;
-            this.hasznalo_Label.Location = new System.Drawing.Point(6, 26);
-            this.hasznalo_Label.Name = "hasznalo_Label";
-            this.hasznalo_Label.Size = new System.Drawing.Size(54, 13);
-            this.hasznalo_Label.TabIndex = 0;
-            this.hasznalo_Label.Text = "Használó:";
+            this.leiras_Label.AutoSize = true;
+            this.leiras_Label.Location = new System.Drawing.Point(333, 15);
+            this.leiras_Label.Name = "leiras_Label";
+            this.leiras_Label.Size = new System.Drawing.Size(89, 13);
+            this.leiras_Label.TabIndex = 6;
+            this.leiras_Label.Text = "Képesség leírása";
             // 
-            // hasznaloComboBox
+            // leirasTextBox
             // 
-            this.hasznaloComboBox.FormattingEnabled = true;
-            this.hasznaloComboBox.Location = new System.Drawing.Point(79, 23);
-            this.hasznaloComboBox.Name = "hasznaloComboBox";
-            this.hasznaloComboBox.Size = new System.Drawing.Size(214, 21);
-            this.hasznaloComboBox.TabIndex = 1;
-            // 
-            // kepessegnev_Label
-            // 
-            this.kepessegnev_Label.AutoSize = true;
-            this.kepessegnev_Label.Location = new System.Drawing.Point(9, 72);
-            this.kepessegnev_Label.Name = "kepessegnev_Label";
-            this.kepessegnev_Label.Size = new System.Drawing.Size(30, 13);
-            this.kepessegnev_Label.TabIndex = 2;
-            this.kepessegnev_Label.Text = "Név:";
-            // 
-            // kepessegNeveListBox
-            // 
-            this.kepessegNeveListBox.FormattingEnabled = true;
-            this.kepessegNeveListBox.Location = new System.Drawing.Point(79, 68);
-            this.kepessegNeveListBox.Name = "kepessegNeveListBox";
-            this.kepessegNeveListBox.Size = new System.Drawing.Size(214, 17);
-            this.kepessegNeveListBox.TabIndex = 3;
+            this.leirasTextBox.Location = new System.Drawing.Point(336, 40);
+            this.leirasTextBox.Multiline = true;
+            this.leirasTextBox.Name = "leirasTextBox";
+            this.leirasTextBox.Size = new System.Drawing.Size(268, 83);
+            this.leirasTextBox.TabIndex = 5;
             // 
             // hozzaad_Button
             // 
@@ -150,22 +134,39 @@
             this.hozzaad_Button.Text = "Hozzáad";
             this.hozzaad_Button.UseVisualStyleBackColor = true;
             // 
-            // leirasTextBox
+            // kepessegNeveListBox
             // 
-            this.leirasTextBox.Location = new System.Drawing.Point(336, 40);
-            this.leirasTextBox.Multiline = true;
-            this.leirasTextBox.Name = "leirasTextBox";
-            this.leirasTextBox.Size = new System.Drawing.Size(268, 83);
-            this.leirasTextBox.TabIndex = 5;
+            this.kepessegNeveListBox.FormattingEnabled = true;
+            this.kepessegNeveListBox.Location = new System.Drawing.Point(79, 68);
+            this.kepessegNeveListBox.Name = "kepessegNeveListBox";
+            this.kepessegNeveListBox.Size = new System.Drawing.Size(214, 17);
+            this.kepessegNeveListBox.TabIndex = 3;
             // 
-            // leiras_Label
+            // kepessegnev_Label
             // 
-            this.leiras_Label.AutoSize = true;
-            this.leiras_Label.Location = new System.Drawing.Point(333, 15);
-            this.leiras_Label.Name = "leiras_Label";
-            this.leiras_Label.Size = new System.Drawing.Size(89, 13);
-            this.leiras_Label.TabIndex = 6;
-            this.leiras_Label.Text = "Képesség leírása";
+            this.kepessegnev_Label.AutoSize = true;
+            this.kepessegnev_Label.Location = new System.Drawing.Point(9, 72);
+            this.kepessegnev_Label.Name = "kepessegnev_Label";
+            this.kepessegnev_Label.Size = new System.Drawing.Size(30, 13);
+            this.kepessegnev_Label.TabIndex = 2;
+            this.kepessegnev_Label.Text = "Név:";
+            // 
+            // hasznaloComboBox
+            // 
+            this.hasznaloComboBox.FormattingEnabled = true;
+            this.hasznaloComboBox.Location = new System.Drawing.Point(79, 23);
+            this.hasznaloComboBox.Name = "hasznaloComboBox";
+            this.hasznaloComboBox.Size = new System.Drawing.Size(214, 21);
+            this.hasznaloComboBox.TabIndex = 1;
+            // 
+            // hasznalo_Label
+            // 
+            this.hasznalo_Label.AutoSize = true;
+            this.hasznalo_Label.Location = new System.Drawing.Point(6, 26);
+            this.hasznalo_Label.Name = "hasznalo_Label";
+            this.hasznalo_Label.Size = new System.Drawing.Size(54, 13);
+            this.hasznalo_Label.TabIndex = 0;
+            this.hasznalo_Label.Text = "Használó:";
             // 
             // listazas_GroupBox
             // 
@@ -183,56 +184,14 @@
             this.listazas_GroupBox.TabIndex = 2;
             this.listazas_GroupBox.TabStop = false;
             // 
-            // harcosokListBox
+            // modosit_Button
             // 
-            this.harcosokListBox.FormattingEnabled = true;
-            this.harcosokListBox.Location = new System.Drawing.Point(12, 42);
-            this.harcosokListBox.Name = "harcosokListBox";
-            this.harcosokListBox.Size = new System.Drawing.Size(120, 225);
-            this.harcosokListBox.TabIndex = 0;
-            // 
-            // harcosok_Label
-            // 
-            this.harcosok_Label.AutoSize = true;
-            this.harcosok_Label.Location = new System.Drawing.Point(9, 16);
-            this.harcosok_Label.Name = "harcosok_Label";
-            this.harcosok_Label.Size = new System.Drawing.Size(56, 13);
-            this.harcosok_Label.TabIndex = 1;
-            this.harcosok_Label.Text = "Harcosok:";
-            // 
-            // kepessegekListBox
-            // 
-            this.kepessegekListBox.FormattingEnabled = true;
-            this.kepessegekListBox.Location = new System.Drawing.Point(173, 42);
-            this.kepessegekListBox.Name = "kepessegekListBox";
-            this.kepessegekListBox.Size = new System.Drawing.Size(120, 225);
-            this.kepessegekListBox.TabIndex = 2;
-            // 
-            // kepessegei_Label
-            // 
-            this.kepessegei_Label.AutoSize = true;
-            this.kepessegei_Label.Location = new System.Drawing.Point(170, 16);
-            this.kepessegei_Label.Name = "kepessegei_Label";
-            this.kepessegei_Label.Size = new System.Drawing.Size(65, 13);
-            this.kepessegei_Label.TabIndex = 3;
-            this.kepessegei_Label.Text = "Képességei:";
-            // 
-            // kepessegleiras_Label
-            // 
-            this.kepessegleiras_Label.AutoSize = true;
-            this.kepessegleiras_Label.Location = new System.Drawing.Point(333, 16);
-            this.kepessegleiras_Label.Name = "kepessegleiras_Label";
-            this.kepessegleiras_Label.Size = new System.Drawing.Size(65, 13);
-            this.kepessegleiras_Label.TabIndex = 4;
-            this.kepessegleiras_Label.Text = "Képességei:";
-            // 
-            // kepessegLeirasaTextBox
-            // 
-            this.kepessegLeirasaTextBox.Location = new System.Drawing.Point(336, 42);
-            this.kepessegLeirasaTextBox.Multiline = true;
-            this.kepessegLeirasaTextBox.Name = "kepessegLeirasaTextBox";
-            this.kepessegLeirasaTextBox.Size = new System.Drawing.Size(268, 83);
-            this.kepessegLeirasaTextBox.TabIndex = 6;
+            this.modosit_Button.Location = new System.Drawing.Point(484, 131);
+            this.modosit_Button.Name = "modosit_Button";
+            this.modosit_Button.Size = new System.Drawing.Size(120, 23);
+            this.modosit_Button.TabIndex = 8;
+            this.modosit_Button.Text = "Módosít";
+            this.modosit_Button.UseVisualStyleBackColor = true;
             // 
             // torles_Button
             // 
@@ -243,14 +202,56 @@
             this.torles_Button.Text = "Törlés";
             this.torles_Button.UseVisualStyleBackColor = true;
             // 
-            // modosit_Button
+            // kepessegLeirasaTextBox
             // 
-            this.modosit_Button.Location = new System.Drawing.Point(484, 131);
-            this.modosit_Button.Name = "modosit_Button";
-            this.modosit_Button.Size = new System.Drawing.Size(120, 23);
-            this.modosit_Button.TabIndex = 8;
-            this.modosit_Button.Text = "Módosít";
-            this.modosit_Button.UseVisualStyleBackColor = true;
+            this.kepessegLeirasaTextBox.Location = new System.Drawing.Point(336, 42);
+            this.kepessegLeirasaTextBox.Multiline = true;
+            this.kepessegLeirasaTextBox.Name = "kepessegLeirasaTextBox";
+            this.kepessegLeirasaTextBox.Size = new System.Drawing.Size(268, 83);
+            this.kepessegLeirasaTextBox.TabIndex = 6;
+            // 
+            // kepessegleiras_Label
+            // 
+            this.kepessegleiras_Label.AutoSize = true;
+            this.kepessegleiras_Label.Location = new System.Drawing.Point(333, 16);
+            this.kepessegleiras_Label.Name = "kepessegleiras_Label";
+            this.kepessegleiras_Label.Size = new System.Drawing.Size(65, 13);
+            this.kepessegleiras_Label.TabIndex = 4;
+            this.kepessegleiras_Label.Text = "Képességei:";
+            // 
+            // kepessegei_Label
+            // 
+            this.kepessegei_Label.AutoSize = true;
+            this.kepessegei_Label.Location = new System.Drawing.Point(170, 16);
+            this.kepessegei_Label.Name = "kepessegei_Label";
+            this.kepessegei_Label.Size = new System.Drawing.Size(65, 13);
+            this.kepessegei_Label.TabIndex = 3;
+            this.kepessegei_Label.Text = "Képességei:";
+            // 
+            // kepessegekListBox
+            // 
+            this.kepessegekListBox.FormattingEnabled = true;
+            this.kepessegekListBox.Location = new System.Drawing.Point(173, 42);
+            this.kepessegekListBox.Name = "kepessegekListBox";
+            this.kepessegekListBox.Size = new System.Drawing.Size(120, 225);
+            this.kepessegekListBox.TabIndex = 2;
+            // 
+            // harcosok_Label
+            // 
+            this.harcosok_Label.AutoSize = true;
+            this.harcosok_Label.Location = new System.Drawing.Point(9, 16);
+            this.harcosok_Label.Name = "harcosok_Label";
+            this.harcosok_Label.Size = new System.Drawing.Size(56, 13);
+            this.harcosok_Label.TabIndex = 1;
+            this.harcosok_Label.Text = "Harcosok:";
+            // 
+            // harcosokListBox
+            // 
+            this.harcosokListBox.FormattingEnabled = true;
+            this.harcosokListBox.Location = new System.Drawing.Point(12, 42);
+            this.harcosokListBox.Name = "harcosokListBox";
+            this.harcosokListBox.Size = new System.Drawing.Size(120, 225);
+            this.harcosokListBox.TabIndex = 0;
             // 
             // Form1
             // 
@@ -261,7 +262,7 @@
             this.Controls.Add(this.kepesseg_GroupBox);
             this.Controls.Add(this.harcos_GroupBox);
             this.Name = "Form1";
-            this.Text = "Harcos létrehozása";
+            this.Text = "Harcosok";
             this.harcos_GroupBox.ResumeLayout(false);
             this.harcos_GroupBox.PerformLayout();
             this.kepesseg_GroupBox.ResumeLayout(false);
@@ -276,7 +277,7 @@
 
         private System.Windows.Forms.GroupBox harcos_GroupBox;
         private System.Windows.Forms.Button letrehozas_Button;
-        private System.Windows.Forms.TextBox harcosNexeTextBox;
+        private System.Windows.Forms.TextBox harcosNeveTextBox;
         private System.Windows.Forms.Label nev_Label;
         private System.Windows.Forms.GroupBox kepesseg_GroupBox;
         private System.Windows.Forms.Label leiras_Label;
