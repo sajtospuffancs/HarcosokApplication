@@ -14,7 +14,7 @@ namespace HarcosokApplication
     public partial class Form1 : Form
     {
         MySqlConnection conn;
-        List<string> harcosnevek = new List<string>();
+        public List<string> harcosnevek = new List<string>();
 
         public Form1()
         {
@@ -78,25 +78,45 @@ namespace HarcosokApplication
         private void letrehozas_Button_Click(object sender, EventArgs e)
         {
             string harcosnev = harcosNeveTextBox.Text;
-            bool bennevan = true;
-            foreach(string t in harcosnevek)
-            { 
-                if (harcosnev != t)
-                {
-                    bennevan = false;
-                }
-
-            }
-            if (bennevan == true)
+            if (harcosnevek.Count() > 0)
             {
-                MessageBox.Show("Ez a név már foglalt! Kérlek válassz újat!");
+                int bennevan = 0;
+                foreach (string t in harcosokListBox.Items)
+                {
+                    if (harcosokListBox.Items.Contains(harcosnev))
+                    {
+                        bennevan = 1;
+                    }
+                }
+                if (bennevan == 1)
+                {
+                    MessageBox.Show("Ez a név már foglalt! Kérlek válassz újat!");
+                }
+                else
+                {
+                    var command1 = conn.CreateCommand();
+                    command1.CommandText = string.Format(@"
+                    INSERT INTO harcosok 
+                    (`nev`, `letrehozas`) 
+                    VALUES ('{0}', '{1}')
+                    ;", harcosnev, DateTime.Now.ToString());
+                    command1.ExecuteNonQuery();
+                }
+                neveklekeres();
             }
             else
             {
-                
+                var command1 = conn.CreateCommand();
+                command1.CommandText = string.Format(@"
+                    INSERT INTO harcosok 
+                    (`nev`, `letrehozas`) 
+                    VALUES ('{0}', '{1}')
+                    ;", harcosnev, DateTime.Now.ToString());
+                command1.ExecuteNonQuery();
+                neveklekeres();
             }
             
-
+            
         }
 
         public void neveklekeres()
@@ -125,9 +145,13 @@ namespace HarcosokApplication
             nevolvasas.Close();
             foreach (string t in harcosnevek)
             {
-                harcosokListBox.Items.Add(t);
+                if (!(harcosokListBox.Items.Contains(t)))
+                {
+                    harcosokListBox.Items.Add(t);
+                }
             }
         }
+        
 
 
     }
